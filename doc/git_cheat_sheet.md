@@ -2,16 +2,16 @@
 
 ## Profile Settings
 ### Check:
-git config user.name
-git config user.email
-git config --global --list // gives a good overview
+- git config user.name
+- git config user.email
+- git config --global --list // gives a good overview
 
 ### Change:
-git config --global user.name "user"
-git config --global user.email "email"
+- git config --global user.name "user"
+- git config --global user.email "email"
 
 ## Create Local Repository
-git init
+- git init
 
 ## Information
 - git version
@@ -19,16 +19,16 @@ git init
 - git log // show history of all commits
 
 ## Staging
-git add
-git add <file>
-git add . | git add --all | git add -A // Stage all changes
+- git add
+- git add <file>
+- git add . | git add --all | git add -A // Stage all changes
 
 ### unstage
-git restore --staged <file> // Unstage a file
-git reset // This will revert all local uncommitted changes (should be executed in repo root)
-git reset HEAD --<file>
+- git restore --staged <file> // Unstage a file
+- git reset // This will revert all local uncommitted changes (should be executed in repo root)
+- git reset HEAD --<file>
 or
-git reset HEAD --<directoryName>
+- git reset HEAD --<directoryName>
 Your modifications will be kept. When you run git status the file will once again show up as modified but not yet staged.
 
 ## Exclude Files/Folders from git
@@ -64,6 +64,18 @@ To stash untracked files too, use git stash -u (or --include-untracked).
 
 ## Branches
 - git branch -m master main // Rename master to main
+- git checkout master[/main] // switch branch to master[/main]
+- git pull // copy changes from remote branch to local repository
+- git checkout <branch-name> // switch to branch
+- git checkout . // write content from index, i.e undo unstaged local modifications
+- git checkout [some_dir|file.txt] // yet another way to revert all uncommitted changes (longer to type, but works from any subdirectory)
+- git remote -v // inspect what's on remote branch
+- git remote add origin https://[url.git] // copy local repository to remote branch
+- git remote rename <old> <new> // rename remote branch
+- git remote remove <name> // delete remote branch
+- git push // copy local changes to remote branch
+- git push -u origin main[/master] // copy local changes to remote branch - explicit form
+- git reset <path-specifier> // undo staged modifications
 
 ## Commit
 ### Conventions
@@ -77,59 +89,28 @@ https://cbea.ms/git-commit/
 6. Wrap the body at 72 characters
 7. Use the body to explain what and why vs. how
 
-***
+- git commit -m "message" // move files from staging area into repository
 
-Cheat Sheet:
-git commit -m "message";Verschieben von Dateien aus der Staging Area in das Repository
-git diff;
-git remote -v;Nachschauen, was am Remote Branch anders ist
-git remote add origin https://[url.git];lokales Repository auf remote branch kopieren
-git remote rename <old> <new>;Umbenennen eines remote branches
-git remote remove <name>;Löschen eines remote branches
-git push;Kopieren der Änderungen vom lokalen Repository auf den Remote Branch
-git push -u origin main[/master];Kopieren der Änderungen vom lokalen Repository auf den Remote Branch (explizite Form)
-git pull;Kopieren der Änderungen vom Remote Branch auf das lokale Repository
+## Check Differences
+- git diff // shows differences compared to last commit
 
-git checkout .
-You can also revert uncommitted changes only to particular file or directory:
+## Clean-Up
+- git reset --hard HEAD // remove all local untracked files, so only git tracked files remain
+- git reset --hard <commit-hash>
+- git clean -fdx // WARNING: -x will also remove all ignored files, including those which are specified in .gitignore!
+                    You may want to use -n for preview of files to be deleted.
 
-git checkout [some_dir|file.txt]
-Yet another way to revert all uncommitted changes (longer to type, but works from any subdirectory):
-
-git reset --hard HEAD
-This will remove all local untracked files, so only git tracked files remain:
-
-git clean -fdx
-WARNING: -x will also remove all ignored files, including ones specified by .gitignore! You may want to use -n for preview of files to be deleted.
-
-To sum it up: executing commands below is basically equivalent to fresh git clone from original source (but it does not re-download anything, so is much faster):
-
-git reset
-git checkout .
-git clean -fdx
-Typical usage for this would be in build scripts, when you must make sure that your tree is absolutely clean - does not have any modifications or locally created object files or build artefacts, and you want to make it work very fast and to not re-clone whole repository every single time.
-
-Um alle Dateien auf den letzten Commit-Stand eines Branches zu setzen, kannst du den folgenden Git-Befehl verwenden:
-
-git reset --hard HEAD
-Dieser Befehl setzt das Arbeitsverzeichnis und den Index auf den Zustand des letzten Commits zurück. Wenn du einen bestimmten Branch auf den letzten Commit-Stand setzen möchtest, kannst du zuerst zu diesem Branch wechseln und dann den obigen Befehl ausführen:
-
-git checkout <branch-name>
-git reset --hard HEAD
-Falls du den Branch auf den Zustand eines bestimmten Commits zurücksetzen möchtest, kannst du den Commit-Hash angeben:
-
-git reset --hard <commit-hash>
-Bitte beachte, dass der --hard Parameter alle nicht gespeicherten Änderungen in deinem Arbeitsverzeichnis entfernt. Stelle sicher, dass du alle wichtigen Änderungen gesichert hast, bevor du diesen Befehl ausführst.
-
-Zurück auf HEAD:
-git checkout master
-danach:
-git pull
-
-***
+Clean-up repository: Typical usage for this would be in build scripts, when you must make sure that your tree is absolutely clean -
+does not have any modifications or locally created object files or build artefacts, and you want to make it work very fast and
+to not re-clone whole repository every single time.
+Call these commands in a sequence:
+- git reset
+- git checkout .
+- git clean -fdx
+To sum it up: Executing these commands is basically equivalent to a fresh git clone from original source, but it is much faster.
 
 ## GitLab - MPT-specific
-- No need to create a change package (CP) when creating a Merge Request in GitLab! It's enough to have a work item (WI).
+No need to create a change package (CP) when creating a Merge Request in GitLab! It's enough to have a work item (WI).
 
 ### Branching Strategy
 - There shall be a branch for every feature or bugfix.
