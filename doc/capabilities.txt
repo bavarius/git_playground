@@ -1,0 +1,27 @@
+- Eigenständige Entwicklungsarbeit in der Programmiersprache C (25 Jahre Erfahrung).
+- Sehr gute Kentnisse der Programmiersprache Python (Toolentwicklung zur Codegenerierung, Spiele-Entwicklung)
+- Langjährige Erfahrung in der Programmierung von Microcontrollern
+- Langjährige Erfahrung mit Software-Architektur
+- Vertrauter Umgang mit Software-Architektur-Tool Enterprise Architect
+- Langjährige Erfahrung mit Software-Plattformentwicklung (Trennung: Core-/projektspezifische Inhalte)
+- Gute Kenntnisse der Webentwicklung
+- Tiefe Kenntnis von Build-Umgebungen inkl. Variantenhandling (v.a. GNU make)
+- Erfahrung in der automatisierten Pflege von Konfigurationsmanagement-Listen
+- Tiefgehende Erfahrung mit Debug-Tool Lauterbach Trace32
+- Vertrautheit im Umgang mit Datenbanken (v.a. Access)
+- Vertrautheit mit Konfiguration und Anwendung des Tools zur statischen Codeanalyse: PC-Lint
+- Erfahrung mit Codeanalyse-Tool Polyspace
+- Langjährige Erfahrung mit Sourceverwaltungsprogrammen (ClearCase, PTC(MKS), Git)
+- Einblick in Continuous Integration/Continuous Delivery mit Jenkins
+- Erfahrung mit Multi-Core-Sytemen (Tricore)
+- Grundlegende Kenntnisse von CyberSecurity-Anforderungen (inkl. Kryptografie)
+- Tiefgehende Erfahrung mit der Spezifikation von Anforderungen
+- Erfahrung in der Umsetzung von Source-Code-Dokumentation mittels doxygen (inkl. Tracking von Anforderungen)
+- Sehr gute Kenntnisse von Microsoft Office
+- Langjährige Erfahrung in der Formulierung und Umsetzung von Softwareanforderungen
+- Absolvierung einiger Assessments nach Automotive SPICE
+- Erfahrung mit Busprotokollen: CAN, CAN FD, FlexRay
+- Erfahrung im Kundensupport
+- kann Checklisten zur Releaseerstellung abarbeiten (und erstellen)
+- Sprachkenntnisse: Deutsch und Englisch fließend in Wort und Schrift, Italienisch (B1)
+- Erfahrung mit Qualitätsstandards: Automotive Spice, ISO26262
