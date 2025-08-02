@@ -76,6 +76,8 @@ To stash untracked files too, use git stash -u (or --include-untracked).
 - git push // copy local changes to remote branch
 - git push -u origin main[/master] // copy local changes to remote branch - explicit form
 - git reset <path-specifier> // undo staged modifications
+- git branch -d <branch_name>, git branch --delete <branch_name> // only deletes branch if it has already been fully merged in its upstream branch
+- git push origin --delete <branch_name> // delete remote branch
 
 ## Commit
 ### Conventions
