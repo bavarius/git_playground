@@ -1,0 +1,4 @@
+# Test Cases
+
+- rename file, change contents, commit, merge or rebase
+- rename file, commit
