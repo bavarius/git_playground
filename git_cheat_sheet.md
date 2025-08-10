@@ -58,6 +58,7 @@ Set a label to a commit.
 - git stash push -m "message" - Stash with a message
 - git stash list // List all stashes
 - git stash branch <branchname> // Create a branch from a stash
+- git stash pop [--index] // fetch last stash and continue work
 
 Untracked files (new files not yet added to Git) are not stashed by default.
 To stash untracked files too, use git stash -u (or --include-untracked).
