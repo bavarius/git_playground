@@ -25,7 +25,47 @@
 
     gitGraph
         commit
-        commit id: "change file name + contents" type: HIGHLIGHT
+        commit id: "Change file name + contents" type: HIGHLIGHT
+```
+
+<ins>Test Result:</ins>
+
+- [x] Test passed
+- [ ] Test failed
+
+## Test 2
+
+```mermaid
+
+    requirementDiagram
+
+    functionalRequirement Req_02 {
+        id: 2
+        text: Renaming a file on one branch with changing of file contents on other branch
+        verifymethod: test
+    }
+
+    element test_entity {
+        type: simulation
+    }
+
+    test_entity - satisfies -> Req_02
+```
+
+**Renaming on one Branch + Change of Contents on other branch**
+
+```mermaid
+
+    gitGraph
+        commit
+        branch test
+        commit
+        checkout main
+        commit id: "Rename file" type: HIGHLIGHT
+        checkout test
+        commit id: "Change file contents (still seeing old file name)" type: HIGHLIGHT
+        checkout main
+        merge test
 ```
 
 <ins>Test Result:</ins>
