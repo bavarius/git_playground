@@ -32,13 +32,12 @@ A plugin or VS-Code Extension is required for translation of the [Mermaid](https
 If You see the chart below, it's working on Your computer.
 
 ```mermaid
-graph LR;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+
+    gitGraph
+        commit
+        commit type: HIGHLIGHT
 ```
 
 ## Links
 - https://www.markdownguide.org/basic-syntax/
-
+- https://mermaid.js.org/
