@@ -41,7 +41,7 @@
 
     functionalRequirement Req_02 {
         id: 2
-        text: Renaming a file on one branch with changing of file contents on other branch
+        text: Renaming a file on one branch with changing of file contents on other Branch
         verifymethod: test
     }
 
@@ -81,7 +81,7 @@
 
     functionalRequirement Req_03 {
         id: 3
-        text: Cherry-Pick a Commit from another branch
+        text: "Cherry-Pick a Commit from another Branch"
         verifymethod: test
     }
 
