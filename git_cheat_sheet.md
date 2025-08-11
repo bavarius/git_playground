@@ -19,7 +19,6 @@
 - git log // show history of all commits
 
 ## Staging
-- git add
 - git add <file>
 - git add . | git add --all | git add -A // Stage all changes
 
@@ -93,6 +92,10 @@ https://cbea.ms/git-commit/
 7. Use the body to explain what and why vs. how
 
 - git commit -m "message" // move files from staging area into repository
+
+## Cherry-Picking
+git cherry-pick [--edit] [-n] [-m <parent-number>] [-s] [-x] [--ff] [-S[<keyid>]] <commit>…​
+git cherry-pick (--continue | --skip | --abort | --quit)
 
 ## Check Differences
 - git diff // shows differences compared to last commit
