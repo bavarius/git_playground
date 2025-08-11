@@ -52,7 +52,7 @@
     test_entity - satisfies -> Req_02
 ```
 
-**Renaming on one Branch + Change of Contents on other branch**
+**Renaming on one Branch + Change of Contents on other Branch**
 
 ```mermaid
 
@@ -66,6 +66,41 @@
         commit id: "Change file contents (still seeing old file name)" type: HIGHLIGHT
         checkout main
         merge test
+```
+
+<ins>Test Result:</ins>
+
+- [x] Test passed
+- [ ] Test failed
+
+## Test 3
+
+```mermaid
+
+    requirementDiagram
+
+    functionalRequirement Req_03 {
+        id: 3
+        text: Cherry-Pick a Commit from another branch
+        verifymethod: test
+    }
+
+    element test_entity {
+        type: simulation
+    }
+
+    test_entity - satisfies -> Req_03
+```
+
+**Cherry-Picking a Commit from another Branch**
+
+```mermaid
+
+    gitGraph
+        commit id: "Bug-Fix"
+        branch dev
+        commit
+        cherry-pick id: "Bug-Fix"
 ```
 
 <ins>Test Result:</ins>
