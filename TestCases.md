@@ -142,3 +142,41 @@
 
 - [x] Test passed
 - [ ] Test failed
+
+## Test 5
+
+```mermaid
+
+    requirementDiagram
+
+    functionalRequirement Req_05 {
+        id: 5
+        text: "Merge Commit from another Branch"
+        verifymethod: test
+    }
+
+    element test_entity {
+        type: simulation
+    }
+
+    test_entity - satisfies -> Req_05
+```
+
+**Merge Commit from another Branch**
+
+```mermaid
+
+    gitGraph
+        commit
+        branch test
+        commit
+        checkout main
+        commit
+        checkout main
+        merge test
+```
+
+<ins>Test Result:</ins>
+
+- [ ] Test passed
+- [ ] Test failed
