@@ -108,41 +108,6 @@
 - [x] Test passed
 - [ ] Test failed
 
-## Test 4
-
-```mermaid
-
-    requirementDiagram
-
-    functionalRequirement Req_04 {
-        id: 4
-        text: "Cherry-Pick a Commit of Multiple Conflicting Files"
-        verifymethod: test
-    }
-
-    element test_entity {
-        type: simulation
-    }
-
-    test_entity - satisfies -> Req_04
-```
-
-**Cherry-Picking a Commit of Multiple Conflicting Files**
-
-```mermaid
-
-    gitGraph
-        commit id: "Bug-Fix"
-        branch dev
-        commit
-        cherry-pick id: "Bug-Fix"
-```
-
-<ins>Test Result:</ins>
-
-- [x] Test passed
-- [ ] Test Failed
-
 ## Test 5
 
 ```mermaid
@@ -178,5 +143,5 @@
 
 <ins>Test Result:</ins>
 
-- [ ] Test passed
+- [x] Test passed
 - [ ] Test failed
