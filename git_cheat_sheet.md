@@ -99,6 +99,21 @@ https://cbea.ms/git-commit/
 git commit -m "message" // move files from staging area into repository
 ```
 
+## Merge
+```
+No branch shall contain uncommitted changes before doing a merge!
+
+git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit]
+          [--no-verify] [-s <strategy>] [-X <strategy-option>] [-S[<keyid>]]
+          [--[no-]allow-unrelated-histories]
+          [--[no-]rerere-autoupdate] [-m <msg>] [-F <file>]
+          [--into-name <branch>] [<commit>…​]
+git merge (--continue | --abort | --quit)
+git merge <source_branch> // most common usage: checkout target branch and enter this command
+```
+
+## Rebase
+
 ## Cherry-Picking
 ```
 git cherry-pick [--edit] [-n] [-m <parent-number>] [-s] [-x] [--ff] [-S[<keyid>]] <commit>…​
