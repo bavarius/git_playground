@@ -68,6 +68,7 @@ git stash -u // or --include-untracked
 
 ## Branches
 ```
+git branch -a                           // show list of all local and remote branches
 git pull                                // copy changes from remote branch to local repository
 git push                                // copy local changes to remote branch
 git push -u origin main[/master]        // copy local changes to remote branch - explicit form
