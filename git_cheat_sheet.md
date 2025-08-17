@@ -24,6 +24,7 @@ git init
 git version
 git status
 git log  // show history of all commits
+git log --oneline
 git diff // shows differences compared to last commit
 ```
 
@@ -68,11 +69,17 @@ git stash -u // or --include-untracked
 
 ## Branches
 ```
+git branch                              // show list of all local branches
 git branch -a                           // show list of all local and remote branches
+git branch <branch-name>                // creates a new branch - doesn't switch to it!
+git switch -c <branch-name>             // create a branch and switch to it
+git switch <branch-name>                // switch to branch
 git pull                                // copy changes from remote branch to local repository
 git push                                // copy local changes to remote branch
 git push -u origin main[/master]        // copy local changes to remote branch - explicit form
 git branch -m master main               // Rename master to main
+git branch -m <new branch name>         // Rename the currently active branch
+git checkout -b <branch-name>           // create a branch and switch to it
 git checkout <branch-name>              // switch to branch
 git checkout .                          // write content from index, i.e undo unstaged local modifications
 git checkout [some_dir/file.txt]        // yet another way to revert all uncommitted changes (longer to type, but works from any subdirectory)
@@ -80,6 +87,7 @@ git remote -v                           // inspect what's on remote branch
 git remote add origin https://[url.git] // copy local repository to remote branch
 git remote rename <old> <new>           // rename remote branch
 git branch -d <branch_name>             // only deletes branch if it has already been fully merged in its upstream branch
+git branch -D <branch_name>             // force deleting local branch
 git push origin --delete <branch_name>  // delete remote branch
 git remote remove <name>                // delete remote branch
 ```
@@ -97,7 +105,9 @@ https://cbea.ms/git-commit/
 7. Use the body to explain what and why vs. how
 
 ```
-git commit -m "message" // move files from staging area into repository
+git commit -m "message"    // move files from staging area into repository
+git commit -a -m "message" // add all unstaged changes and commit
+git commit --amend         // correct last commit: add files or correct wording
 ```
 
 ## Merge
@@ -114,6 +124,13 @@ git merge <source_branch> // most common usage: checkout target branch and enter
 ```
 
 ## Rebase
+```
+git rebase [-i | --interactive] [<options>] [--exec <cmd>]
+        [--onto <newbase> | --keep-base] [<upstream> [<branch>]]
+git rebase [-i | --interactive] [<options>] [--exec <cmd>] [--onto <newbase>]
+        --root [<branch>]
+git rebase (--continue|--skip|--abort|--quit|--edit-todo|--show-current-patch)
+```
 
 ## Cherry-Picking
 ```
