@@ -1,0 +1,12 @@
+Wenn das Programm nicht mehr startet, folgende Datei wegsichern und Programm neu starten:
+"%HOMEPATH%\AppData\Roaming\SEH Computertechnik GmbH\SEH UTN Manager.ini"
+
+Für einen neuen Import der Serverliste kann man sich eine Testdatei mit folgendem Inhalt anlegen:
+[slots]
+10.191.95.11\myUTNHostname=LANLXWUT22090002
+10.191.95.92\myUTNHostname=LANLXWUT22090003
+10.191.93.34\myUTNHostname=LANLXWUT22070001
+10.191.93.14\myUTNHostname=LANLXWUT22070002
+10.191.93.31\myUTNHostname=LANLXWUT24040001
+
+Dann: Auswahlliste->importieren
