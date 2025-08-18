@@ -111,9 +111,11 @@ git commit --amend         // correct last commit: add files or correct wording
 ```
 
 ## Merge
-```
 No branch shall contain uncommitted changes before doing a merge!
+Only branches are merged - no single commits.<br />
+**The merge always targets the current HEAD branch!**
 
+```
 git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit]
           [--no-verify] [-s <strategy>] [-X <strategy-option>] [-S[<keyid>]]
           [--[no-]allow-unrelated-histories]
@@ -121,6 +123,35 @@ git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit]
           [--into-name <branch>] [<commit>…​]
 git merge (--continue | --abort | --quit)
 git merge <source_branch> // most common usage: checkout target branch and enter this command
+```
+
+### Fast-Forward Merge
+This is the simplest merge! This example shows the merge of `test` into `main`.<br />
+```
+git checkout main // switch to recipient branch
+git merge test
+```
+
+No changes on `main` since branching to `test`! No automatic commit is created by git.<br />
+**Only the pointer for branch `main` is moved further by two commits.**
+
+```mermaid
+
+    gitGraph
+        commit id: "1234567"
+        commit id: "7654321" tag: "main"
+        branch test
+        commit id: "2222222"
+        commit id: "7777777" tag: "test"
+```
+
+```mermaid
+
+    gitGraph
+        commit id: "1234567"
+        commit id: "7654321"
+        commit id: "2222222"
+        commit id: "7777777" tag: "main, test"
 ```
 
 ## Rebase
