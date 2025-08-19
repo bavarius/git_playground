@@ -25,7 +25,6 @@ git version
 git status
 git log  // show history of all commits
 git log --oneline
-git diff // shows differences compared to last commit
 ```
 
 ## Exclude Files/Folders from git
@@ -67,6 +66,35 @@ To stash untracked files too, use ...
 git stash -u // or --include-untracked
 ```
 
+## Commit
+### Conventions
+https://cbea.ms/git-commit/
+
+1. Separate subject from body with a blank line
+2. Limit the subject line to 50 characters
+3. Capitalize the subject line
+4. Do not end the subject line with a period
+5. Use the imperative mood in the subject line
+6. Wrap the body at 72 characters
+7. Use the body to explain what and why vs. how
+
+```
+git commit -m "message"    // move files from staging area into repository
+git commit -a -m "message" // add all unstaged changes and commit
+git commit --amend         // correct last commit: add files or correct wording
+```
+
+## Diff
+```
+git diff                      // shows unstaged differences compared to last commit
+git diff HEAD                 // shows differences compared to last commit - staged or unstaged
+git diff --staged             // shows differences between staging area and last commit
+git diff --cached             // shows differences between staging area and last commit
+git diff [filename]           // filename can be specified for all the commands above - to narrow down the result
+git diff <branch1> <branch2>  // compare two branches - order matters! (also possible: <branch1>..<branch2>)
+git diff <commit1>..<commit2> // compare two brcommitsanches - order matters!
+```
+
 ## Branches
 ```
 git branch                              // show list of all local branches
@@ -92,24 +120,6 @@ git push origin --delete <branch_name>  // delete remote branch
 git remote remove <name>                // delete remote branch
 ```
 
-## Commit
-### Conventions
-https://cbea.ms/git-commit/
-
-1. Separate subject from body with a blank line
-2. Limit the subject line to 50 characters
-3. Capitalize the subject line
-4. Do not end the subject line with a period
-5. Use the imperative mood in the subject line
-6. Wrap the body at 72 characters
-7. Use the body to explain what and why vs. how
-
-```
-git commit -m "message"    // move files from staging area into repository
-git commit -a -m "message" // add all unstaged changes and commit
-git commit --amend         // correct last commit: add files or correct wording
-```
-
 ## Merge
 No branch shall contain uncommitted changes before doing a merge!
 Only branches are merged - no single commits.<br />
@@ -125,7 +135,7 @@ git merge (--continue | --abort | --quit)
 git merge <source_branch> // most common usage: checkout target branch and enter this command
 ```
 
-### Fast-Forward Merge
+### Fast Forward Merge
 This is the simplest merge! This example shows the merge of `test` into `main`.<br />
 ```
 git checkout main // switch to recipient branch
@@ -153,6 +163,25 @@ No changes on `main` since branching to `test`! No automatic commit is created b
         commit id: "2222222"
         commit id: "7777777" tag: "main, test"
 ```
+
+### Merge Commit (No Conflicts)
+This automatic merge creates a new commit.
+
+```mermaid
+
+    gitGraph
+        commit
+        branch test
+        commit
+        checkout main
+        commit
+        checkout main
+        merge test
+```
+
+### Merge Conflicts
+Same as `Merge Commit`. But conflicts have to be resolved first.<br />
+Then the commit has to be done manually.
 
 ## Rebase
 ```
