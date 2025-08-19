@@ -125,7 +125,7 @@ git merge (--continue | --abort | --quit)
 git merge <source_branch> // most common usage: checkout target branch and enter this command
 ```
 
-### Fast-Forward Merge
+### Fast Forward Merge
 This is the simplest merge! This example shows the merge of `test` into `main`.<br />
 ```
 git checkout main // switch to recipient branch
@@ -153,6 +153,25 @@ No changes on `main` since branching to `test`! No automatic commit is created b
         commit id: "2222222"
         commit id: "7777777" tag: "main, test"
 ```
+
+### Merge Commit (No Conflicts)
+This automatic merge creates a new commit.
+
+```mermaid
+
+    gitGraph
+        commit
+        branch test
+        commit
+        checkout main
+        commit
+        checkout main
+        merge test
+```
+
+### Merge Conflicts
+Same as `Merge Commit`. But conflicts have to be resolved first.<br />
+Then the commit has to be done manually.
 
 ## Rebase
 ```
