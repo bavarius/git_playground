@@ -1,0 +1,129 @@
+// Task Runner Configuration for Extension "Simple Task Buttons"
+// Add configurable task buttons to the status bar for quick execution of workspace tasks
+// Icons are configured inside file "task-buttons.json" which is loaded by "tasks.json" on startup.
+// Use any unicode symbol and copy it directly into Your button configuration file. Other icons: "🚀, 💗, ❌" 
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "${workspaceFolder}/BuildJobIDE.bat",
+            "args": [
+                "all"
+            ],
+            "group": {
+                "kind": "build", 
+                "isDefault": true
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "make-j",
+            "type": "shell",
+            "command": "${workspaceFolder}/BuildJobIDE.bat",
+            "args": [
+                "all",
+                "-j27"
+            ],
+            "group": {
+                "kind": "build", 
+                "isDefault": false
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "${workspaceFolder}/BuildJobIDE.bat",
+            "args": [
+                "clean"
+            ],
+            "group": {
+                "kind": "build", 
+                "isDefault": false
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "doc",
+            "type": "shell",
+            "command": "${workspaceFolder}/BuildJobIDE.bat",
+            "args": [
+                "doc"
+            ],
+            "group": {
+                "kind": "build", 
+                "isDefault": false
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "lint1",
+            "type": "shell",
+            "command": "${workspaceFolder}/BuildJobIDE.bat",
+            "args": [
+              "lint",
+              "file=${fileBasename}"
+            ],
+            "group": {
+                "kind": "build", 
+                "isDefault": false
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "lint_all",
+            "type": "shell",
+            "command": "${workspaceFolder}/BuildJobIDE.bat",
+            "args": [
+              "lint"
+            ],
+            "group": {
+                "kind": "build", 
+                "isDefault": false
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "help",
+            "type": "shell",
+            "command": "${workspaceFolder}/BuildJobIDE.bat",
+            "args": [
+              "help"
+            ],
+            "group": {
+                "kind": "build", 
+                "isDefault": false
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "git",
+            "type": "shell",
+            "command": "git",
+            "args": [
+              "status"
+            ],
+            "group": {
+                "isDefault": false
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "git_conf",
+            "type": "shell",
+            "command": "git",
+            "args": [
+              "config",
+              "--global",
+              "--list"
+            ],
+            "group": {
+                "isDefault": false
+            },
+            "problemMatcher": [],
+        },
+    ]
+}
+ 
