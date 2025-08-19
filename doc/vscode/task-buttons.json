@@ -1,0 +1,58 @@
+{
+    "buttons": [
+    {
+      "name": "make",
+      "task": "build",
+      "icon": "🔨",
+      "tooltip": "Build the project"
+    },
+    {
+      "name": "make -j#",
+      "task": "make-j",
+      "icon": "🔨",
+      "tooltip": "Build the project"
+    },
+    {
+      "name": "clean",
+      "task": "clean",
+      "icon": "🌊",
+      "tooltip": "Clean project"
+    },
+    {
+      "name": "doc",
+      "task": "doc",
+      "icon": "📃",
+      "tooltip": "Generate doxygen documentation"
+    },
+    {
+      "name": "lint 1 File",
+      "task": "lint1",
+      "icon": "🧪",
+      "tooltip": "lint-check current file"
+    },
+    {
+      "name": "lint all",
+      "task": "lint_all",
+      "icon": "🧪",
+      "tooltip": "lint-check whole project"
+    },
+    {
+      "name": "help",
+      "task": "help",
+      "icon": "❓",
+      "tooltip": "show make-help-screen"
+    },
+    {
+      "name": "git",
+      "task": "git",
+      "icon": "🍺",
+      "tooltip": "display git status"
+    },
+    {
+      "name": "git_conf",
+      "task": "git_conf",
+      "icon": "🍺",
+      "tooltip": "display git configuration - check HOME path setting upon error!"
+    }
+  ]
+}
