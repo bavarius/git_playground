@@ -53,10 +53,11 @@ Your modifications will be kept. When you run git status the file will once agai
 
 ## Stashing
 ```
-git stash                     // Stash your changes
-git stash push -m "message"   // Stash with a message
-git stash list                // List all stashes
-git stash branch <branchname> // Create a branch from a stash
+git stash                     // stash your uncommitted changes
+git stash push -m "message"   // stash with a message
+git stash list                // list all stashes
+git stash apply stash@{1}     // apply stash with passed index - stash remains on stash stack
+git stash branch <branchname> // create a branch from a stash
 git stash pop [--index]       // fetch last stash and continue work
 ```
 
