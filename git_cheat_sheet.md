@@ -58,7 +58,8 @@ git stash push -m "message"   // stash with a message
 git stash list                // list all stashes
 git stash apply stash@{1}     // apply stash with passed index - stash remains on stash stack
 git stash branch <branchname> // create a branch from a stash
-git stash pop [--index]       // fetch last stash and continue work
+git stash pop                 // fetch last stash and continue work
+git stash clear               // clear all stashes from stack
 ```
 
 Untracked files (new files not yet added to Git) are not stashed by default.
@@ -105,7 +106,7 @@ git switch -c <branch-name>             // create a branch and switch to it
 git switch <branch-name>                // switch to branch
 git pull                                // copy changes from remote branch to local repository
 git push                                // copy local changes to remote branch
-git push -u origin main[/master]        // copy local changes to remote branch - explicit form
+git push -u origin main[/master]        // setup upstream branch - so 'git push' will work!
 git branch -m master main               // Rename master to main
 git branch -m <new branch name>         // Rename the currently active branch
 git checkout -b <branch-name>           // create a branch and switch to it
@@ -197,6 +198,19 @@ git rebase (--continue|--skip|--abort|--quit|--edit-todo|--show-current-patch)
 ```
 git cherry-pick [--edit] [-n] [-m <parent-number>] [-s] [-x] [--ff] [-S[<keyid>]] <commit>…​
 git cherry-pick (--continue | --skip | --abort | --quit)
+```
+## Undoing Changes & Time Travelling
+```             
+git checkout <commit>              // switches to commit specified by its hash
+git checkout HEAD~1                // switches to parent commit
+git checkout HEAD~2                // switches to grandparent
+git switch -                       // go back to where You left off
+git switch <branch>                // set HEAD to top of branch
+git restore --source HEAD~1 <file> // modify a file to a former state - HEAD stays on top!
+git restore --staged <file>        // remove file from staging area
+git reset <commit>                 // go back to commit - changed files are still in working directory.
+git reset --hard <commit>          // go back to commit - changed files are gone.
+git revert <commit>                // undo changes of specified commit and create a new merge-commit
 ```
 
 ## Clean-Up
