@@ -6,7 +6,6 @@ This is a collection of very intelligent or gramatically wrong expressions catch
 - eben
 - entsprechend
 - ba-ba-ba
-- verschriftlichen (Gunther Piller)
 - em -em -em
 - ja nach jedem Satz alla Schicki
 - tuttdudutt-dudutt beim Nachdenken
@@ -19,4 +18,3 @@ This is a collection of very intelligent or gramatically wrong expressions catch
 - am Ende des Tages
 - year-to-date
 - ... als möglich
-  
