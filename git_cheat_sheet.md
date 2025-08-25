@@ -126,6 +126,7 @@ git remote remove <name>                // delete remote branch
 No branch shall contain uncommitted changes before doing a merge!
 Only branches are merged - no single commits.<br />
 **The merge always targets the current HEAD branch!**
+> Note: You **merge into** - and You **rebase onto**!
 
 ```
 git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit]
@@ -186,12 +187,104 @@ Same as `Merge Commit`. But conflicts have to be resolved first.<br />
 Then the commit has to be done manually.
 
 ## Rebase
+This command is used to keep history clean. E.g. You can place the commits of a feature branch on top of the master/main branch.
+
 ```
 git rebase [-i | --interactive] [<options>] [--exec <cmd>]
         [--onto <newbase> | --keep-base] [<upstream> [<branch>]]
 git rebase [-i | --interactive] [<options>] [--exec <cmd>] [--onto <newbase>]
         --root [<branch>]
 git rebase (--continue|--skip|--abort|--quit|--edit-todo|--show-current-patch)
+
+> Note: You **merge into** - and You **rebase onto**!
+```
+
+### Normal Rebase
+```
+git switch feature
+git rebase main
+```
+
+With a rebase You can also get rid of `merge commits`.
+
+History before `rebase`:
+```mermaid
+
+    gitGraph
+        commit id: "main #1"
+        branch feature
+        commit id: "feature #1" type: REVERSE
+        checkout main
+        commit id: "main #2"
+        checkout feature
+        merge main
+        commit id: "feature #2" type: REVERSE
+        checkout main
+        commit id: "main #3"
+        checkout feature
+        merge main
+        commit id: "feature #3" type: REVERSE
+```
+        
+History after `rebase`:
+```mermaid
+
+    gitGraph
+        commit id: "main #1"
+        commit id: "main #2"
+        commit id: "main #3"
+        commit id: "feature #1" type: REVERSE
+        commit id: "feature #2" type: REVERSE
+        commit id: "feature #3" type: REVERSE
+```
+
+**History is cleaned-up. The `merge commits` are gone. But the two branches `main` and `feature` still exist.**
+
+What happens if there's a new commit on `main`?
+```mermaid
+
+    gitGraph
+        commit id: "main #1"
+        commit id: "main #2"
+        commit id: "main #3"
+        branch feature
+        commit id: "feature #1" type: REVERSE
+        commit id: "feature #2" type: REVERSE
+        commit id: "feature #3" type: REVERSE
+        checkout main
+        commit id: "main #4"
+```
+
+
+The commits of the `feature` branch are displayed on a separate branch again.
+
+**Solution:**
+Do a new `rebase` from `feature` to `main` with a subsequent `merge` which will be fast-forwarded.
+
+**`rebase`**
+```mermaid
+
+    gitGraph
+        commit id: "main #1"
+        commit id: "main #2"
+        commit id: "main #3"
+        commit id: "main #4"
+        commit id: "feature #1" type: REVERSE
+        commit id: "feature #2" type: REVERSE
+        commit id: "feature #3" type: REVERSE
+```
+
+**`merge`**
+```mermaid
+
+    gitGraph
+        commit id: "main #1"
+        commit id: "main #2"
+        commit id: "main #3"
+        commit id: "main #4"
+        commit id: "feature #1" 
+        commit id: "feature #2" 
+        commit id: "feature #3" tag: "HEAD"
 ```
 
 ## Cherry-Picking
