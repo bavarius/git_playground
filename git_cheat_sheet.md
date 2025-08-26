@@ -94,7 +94,8 @@ git diff --staged             // shows differences between staging area and last
 git diff --cached             // shows differences between staging area and last commit
 git diff [filename]           // filename can be specified for all the commands above - to narrow down the result
 git diff <branch1> <branch2>  // compare two branches - order matters! (also possible: <branch1>..<branch2>)
-git diff <commit1>..<commit2> // compare two brcommitsanches - order matters!
+git diff <commit1>..<commit2> // compare two commits - order matters!
+git diff <tag1> <tag2>        // compare two tags - order matters!
 ```
 
 ## Branches
@@ -287,16 +288,24 @@ Do a new `rebase` from `feature` to `main` with a subsequent `merge` which will 
         commit id: "feature #3" tag: "HEAD"
 ```
 
+## Interactive Rebase
+> git rebase -i HEAD~n
+
+An interactive rebase can reword commit comments, merge/squash/drop commits, etc.
+So it can help cleaning-up the history.
+
 ## Cherry-Picking
 ```
 git cherry-pick [--edit] [-n] [-m <parent-number>] [-s] [-x] [--ff] [-S[<keyid>]] <commit>…​
 git cherry-pick (--continue | --skip | --abort | --quit)
 ```
+
 ## Undoing Changes & Time Travelling
 ```             
 git checkout <commit>              // switches to commit specified by its hash
 git checkout HEAD~1                // switches to parent commit
 git checkout HEAD~2                // switches to grandparent
+git checkout <tag>                 // switches to tagged commit (detached head)
 git switch -                       // go back to where You left off
 git switch <branch>                // set HEAD to top of branch
 git restore --source HEAD~1 <file> // modify a file to a former state - HEAD stays on top!
@@ -330,10 +339,11 @@ Executing these commands is basically equivalent to a fresh git clone from origi
 
 Set a label to a commit.
 ```
+git tag                           // List tags
+git tag -l "*beta*"               // Search for tags matching the pattern
 git tag <tagname>                 // Create a lightweight tag
 git tag -a <tagname> -m "message" // Create an annotated tag
 git tag <tagname> <commit-hash>   // Tag a specific commit
-git tag                           // List tags
 git show <tagname>                // Show tag details
 ```
 
@@ -347,6 +357,44 @@ git push --tags
 ```
 git tag -d <tagname>
 git push origin --delete tag <tagname>
+```
+
+## GitHub - Specific
+
+### Fork & Clone Workflow
+Cloning a repository from GitHub doesn't allow pushing changes directly into the project's official repo, if the user doesn't have collaborator priviledges.<br />
+If the user wants to contribute to the project, the easiest way is to create a fork and clone the fork repository. Then changes can be pushed to GitHub.<br />
+Changes that shall also go into the official repo need to be wrapped into a pull request. The decision to take the proposed changes is up to the official project team.
+
+The chart below illustrates the workflow:
+```mermaid
+
+    flowchart BT
+        C@{ shape: lin-cyl, label: "Local Machine" }
+        B@{ shape: lin-cyl, label: "Forked Project" }
+        A@{ shape: lin-cyl, label: "Official Project" }
+
+        B == Pull Request ==> A
+        A == Pull ==> C
+        C == Push ==> B
+
+```
+
+In order to be able to pull the latest changes from the original project a new remote needs to be added, like this:
+```
+git remote add upstream <official-project-url>
+```
+
+So the command ...
+```
+git remote -v
+```
+... will lead to an output like this:
+```
+origin    <users-cloned-fork-url> (fetch)
+origin    users-cloned-fork-url> (push)
+upstream  <official-project-url> (fetch)
+upstream  <official-project-url> (push)
 ```
 
 ## GitLab - MPT-specific
