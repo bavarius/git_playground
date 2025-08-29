@@ -403,12 +403,13 @@ No need to create a change package (CP) when creating a Merge Request in GitLab!
 ### Branching Strategy
 - There shall be a branch for every feature or bugfix.
 - Change shall be periodically pulled from master.
-- Rebasing shall be done from master to the feature branch. Merge will be done by git2PTC-script.
+- For updating the feature branch rebasing shall be done from master to the feature branch. TODO: How does the commit tree look like?
 
 ### Merge Requests
 - In order to close a Merge Request the reviewer has to set it to "Approved".
 - There must not be any open CP attached to the corresponding WI.
-- Jenkins please merge (into comment field)
+- After approval an interactive rebase onto master shall be done.
+- After rebasing a merge shall be triggered by writing `Jenkins please merge` (into comment field) => Merge will be done by git2PTC-script.
 
 ## Links
 - https://education.github.com/git-cheat-sheet-education.pdf
