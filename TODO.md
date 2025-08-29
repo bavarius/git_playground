@@ -8,7 +8,6 @@ Project Description
 
 - [ ] Split git-knowledge into a large file and a real cheat sheet  
 - [ ] Commit Tree, Rebasing MPT  
-- [ ] Add Test Case for Rebase  
 - [ ] Add Test Case for Reflog Rescue  
 
 ### In Progress
@@ -16,5 +15,6 @@ Project Description
 
 ### Done ✓
 
+- [x] Add Test Case for Rebase  
 - [x] Describe Reflog  
 

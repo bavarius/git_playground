@@ -291,8 +291,23 @@ Do a new `rebase` from `feature` to `main` with a subsequent `merge` which will 
 ## Interactive Rebase
 > git rebase -i HEAD~n
 
-An interactive rebase can reword commit comments, merge/squash/drop commits, etc.
-So it can help cleaning-up the history.
+An interactive allows various options to clean-up history.
+When starting an `interactive rebase` an editor window opens which offers these options:
+```
+pick    // use commit
+reword  // use commit, but edit the commit message
+edit    // use commit, but stop for amending
+squash  // use commit, but meld into previous commit
+fixup   // like "squash" but keep only the previous commit's log message
+drop    // remove commit
+```
+
+On the command line You'll see ...
+```
+hint: Waiting for your editor to close the file...
+```
+
+... but the process can be aborted anytime!
 
 ## Cherry-Picking
 ```
