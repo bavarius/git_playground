@@ -6,13 +6,15 @@ Project Description
 
 ### Todo
 
+- [ ] Split git-knowledge into a large file and a real cheat sheet  
 - [ ] Commit Tree, Rebasing MPT  
-- [ ] Describe Reflog  
-- [ ] Describe Rebase  
+- [ ] Add Test Case for Rebase  
+- [ ] Add Test Case for Reflog Rescue  
 
 ### In Progress
 
 
 ### Done ✓
 
+- [x] Describe Reflog  
 

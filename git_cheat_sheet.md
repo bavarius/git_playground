@@ -359,6 +359,54 @@ git tag -d <tagname>
 git push origin --delete tag <tagname>
 ```
 
+## Reflogs
+All **local** git-actions (commits, switching branches, etc.) are logged for a certain period of time. Storage location: `.git\logs\HEAD`
+
+> Note: Reflogs (reference logs) only exist in **local repositories**!
+
+The basic command for displaying these log entries is this:
+```
+git reflog show HEAD
+```
+
+The tags `HEAD@{n}` do not relate to `HEAD~n` and can change with each action!
+
+When passing a branch name the reference will be `<branch name>`@{n}.
+```
+git reflog show branch_name
+```
+
+These reference can be passed to other git-commands, such as...
+```
+diff
+checkout
+reset
+```
+
+### Timed References
+
+```
+git reflog show main@{one.week.ago}
+git checkout bugfix@{2.days.ago}
+git diff main@{0} main@{yesterday}
+```
+
+### Reflogs Rescue
+Reflogs can be very useful when You want to recover from accidentally executed commands, like e.g. `git reset --hard <commit>`.
+
+Even if important work seems to be lost as important commits cannot be found via `git log` anymore, commits can be recovered using `reflog`- which still holds the commit. And the **blobs** of the accidentally erased commits are still present!
+
+**Perform these steps to do the recovery:**
+1) Locate the commit You want to go to.
+2) Do a hard reset based on a commit hash or reflog tag.
+
+```
+git reflog show master
+git reset --hard master@{1}
+```
+
+> `Reflog` even allows recovery from a bad `rebase`!
+
 ## GitHub - Specific
 
 ### Fork & Clone Workflow
@@ -403,7 +451,7 @@ No need to create a change package (CP) when creating a Merge Request in GitLab!
 ### Branching Strategy
 - There shall be a branch for every feature or bugfix.
 - Change shall be periodically pulled from master.
-- For updating the feature branch rebasing shall be done from master to the feature branch. TODO: How does the commit tree look like?
+- For updating the feature branch rebasing shall be done from master to the feature branch. (MPT wants interactive rebases instead of merges. How does the commit tree look like?)
 
 ### Merge Requests
 - In order to close a Merge Request the reviewer has to set it to "Approved".
