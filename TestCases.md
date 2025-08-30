@@ -145,3 +145,35 @@
 
 - [x] Test passed
 - [ ] Test failed
+
+## Test 11
+
+```mermaid
+
+    requirementDiagram
+
+    functionalRequirement Req_11 {
+        id: 5
+        text: "Recovery from reset --hard"
+        verifymethod: test
+    }
+
+    element test_entity {
+        type: simulation
+    }
+
+    test_entity - satisfies -> Req_11
+```
+
+**Using reflog to recover from hard reset**
+
+Review commit graph and go back to a point of time some commits before (5 commits).<br />
+Execute command `git reset --hard HEAD~5`.<br />
+Analyse reflog (`git reflog show HEAD`). Do a new `git reset --hard <reference>` (reference is either a commit hash or a tag like HEAD@{n}) targetting at the commit before the first `git reset --hard ...`.<br />
+The commit graph shall look the same as before the manipulations!
+
+
+<ins>Test Result:</ins>
+
+- [x] Test passed
+- [ ] Test failed
