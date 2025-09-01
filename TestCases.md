@@ -146,6 +146,63 @@
 - [x] Test passed
 - [ ] Test failed
 
+## Test 10
+
+```mermaid
+
+    requirementDiagram
+
+    functionalRequirement Req_10 {
+        id: 5
+        text: "Simple Rebase"
+        verifymethod: test
+    }
+
+    element test_entity {
+        type: simulation
+    }
+
+    test_entity - satisfies -> Req_10
+```
+
+**Normal Rebase**
+
+History before `rebase`:
+```mermaid
+
+    gitGraph
+        commit id: "main #1"
+        branch feature
+        commit id: "feature #1" type: REVERSE
+        checkout main
+        commit id: "main #2"
+        checkout feature
+        merge main
+        commit id: "feature #2" type: REVERSE
+        checkout main
+        commit id: "main #3"
+        checkout feature
+        merge main
+        commit id: "feature #3" type: REVERSE
+```
+        
+History after `rebase`:
+```mermaid
+
+    gitGraph
+        commit id: "main #1"
+        commit id: "main #2"
+        commit id: "main #3"
+        commit id: "feature #1" type: REVERSE
+        commit id: "feature #2" type: REVERSE
+        commit id: "feature #3" type: REVERSE
+```
+
+<ins>Test Result:</ins>
+
+- [x] Test passed
+- [ ] Test failed
+
 ## Test 11
 
 ```mermaid
@@ -171,9 +228,3 @@ Review commit graph and go back to a point of time some commits before (5 commit
 Execute command `git reset --hard HEAD~5`.<br />
 Analyse reflog (`git reflog show HEAD`). Do a new `git reset --hard <reference>` (reference is either a commit hash or a tag like HEAD@{n}) targetting at the commit before the first `git reset --hard ...`.<br />
 The commit graph shall look the same as before the manipulations!
-
-
-<ins>Test Result:</ins>
-
-- [x] Test passed
-- [ ] Test failed

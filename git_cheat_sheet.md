@@ -309,6 +309,12 @@ hint: Waiting for your editor to close the file...
 
 ... but the process can be aborted anytime!
 
+## How to get out of a Rebase
+```
+git rebase --abort
+git rebase --quit  // can help if git bash is still indicating '|REBASE' with warning 'rebase-merge/head-name not found' on '--abort'
+```
+
 ## Cherry-Picking
 ```
 git cherry-pick [--edit] [-n] [-m <parent-number>] [-s] [-x] [--ff] [-S[<keyid>]] <commit>…​
