@@ -1,0 +1,25 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python Debugger: Current File with Arguments",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "args": [
+        "--dry-run",
+        "--local-run",
+        "--branch",
+        "WI6242398_Crypto_Test_For_MPU_Fault_Injection",
+        "--gitlab-token",
+        "glpat-HrBlZlJCbIIMBkssMxG-T286MQp1OmVoCA.01.0y1mw49y5",
+        "--ialm-pass",
+        "<my PTC-Login>"
+      ]
+    }
+  ]
+}
