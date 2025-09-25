@@ -6,6 +6,7 @@ Project Description
 
 ### Todo
 
+- [ ] CRC16 into LogGen + UTIL  
 - [ ] Split git-knowledge into a large file and a real cheat sheet  
 - [ ] Commit Tree, Rebasing MPT  
 
