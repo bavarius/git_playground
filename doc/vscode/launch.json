@@ -10,12 +10,12 @@
             "type": "debugpy",
             "request": "launch",
             "program": "${file}",
-            "console": "integratedTerminal",
+            "console": "internalConsole",
             "args": [
                 "-o", ".",
                 "-w", "info",
                 "-c", "../../cfg/Logistics/LogisticsData_MSE_ISP_2.0.csv",
-                "-m", "../../cfg/Logistics/block_map.csv",
+                "-m", "../../cfg/Logistics/block_map.csv"
             ]
         }
     ]
