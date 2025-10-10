@@ -1,0 +1,5 @@
+Install packages:
+- pip3.12.exe install python-gitlab
+- pip3.12.exe install GitPython
+
+See TestGitlab!
