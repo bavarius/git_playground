@@ -25,3 +25,7 @@
 - kann Checklisten zur Releaseerstellung abarbeiten (und erstellen)
 - Sprachkenntnisse: Deutsch und Englisch fließend in Wort und Schrift, Italienisch (B1)
 - Erfahrung mit Qualitätsstandards: Automotive Spice, ISO26262
+
+TODO - Unbedingt noch Einstieg in Folgendes bekommen:
+- Docker
+- KI
