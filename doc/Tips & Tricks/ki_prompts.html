@@ -47,8 +47,7 @@ section {
 
 <header>
 <h1>Die Prompt-Sammlung<br/>Dr. Fabian Konstantiniuk<br/><a href="http://www.konstantiniuk.at" target="_blank">www.konstantiniuk.at</a></h1>
-<p>Inhalt der Promptsammlung mit Kapitelübersicht, Volltext und Suchfunktion</p>
-<input type="text" id="searchBox" placeholder="Suche nach Begriffen..."/>
+<p>Inhalt der Promptsammlung mit Kapitelübersicht und klickbaren Links</p>
 </header>
 
 <h2 id="toc">Inhaltsverzeichnis</h2>
@@ -57,16 +56,22 @@ section {
 <li><a href="#einleitung">Prompten leicht gemacht</a></li>
 <li><a href="#5w_framework">Das 5W-Framework</a></li>
 <li><a href="#prompt_gen">Der Promptgenerator</a></li>
-<li><a href="#my_1st_prompt">Dein erster eigener Prompt</a></li>
-<!-- Hier alle Kapitel- und Prompt-Links hinzufügen, basierend auf dem Text -->
+<li><a href="#my_1st_prompt">Mein Prompt</a></li>
 <li><a href="#email1">E-Mails verfassen</a></li>
-
-<!-- Für Demonstration: -->
-<li><a href="#prompt7">Prompt: E-Mails beantworten</a></li>
-<li><a href="#prompt8">Prompt: E-Mails überarbeiten</a></li>
-<li><a href="#prompt9">Prompt: Wiederkehrende E-Mails</a></li>
-<li><a href="#prompt10">Prompt: Gespräche & Verhandlungen</a></li>
-<!-- ...alle weiteren Prompt-Links entsprechend ergänzen... -->
+<li><a href="#email2">E-Mails beantworten</a></li>
+<li><a href="#email3">E-Mails überarbeiten</a></li>
+<li><a href="#email4">Wiederkehrende E-Mails</a></li>
+<li><a href="#verhandlung1">Gesprächsleitfaden</a></li>
+<li><a href="#verhandlung2">Andere Sichtweisen verstehen</a></li>
+<li><a href="#verhandlung3">Verhandeln nach dem Harvard-Modell</a></li>
+<li><a href="#verhandlung4">Gehaltsverhandlungen meistern</a></li>
+<li><a href="#presentation1">Struktur der Präsentation</a></li>
+<li><a href="#presentation2">Sprechtext der Präsentation</a></li>
+<li><a href="#presentation3">Einfach erklären</a></li>
+<li><a href="#presentation4">Umgang mit kritischen Fragen</a></li>
+<li><a href="#rhethorik">Rhethorik Coach</a></li>
+<li><a href="#productivity1">Tagesplanung</a></li>
+<li><a href="#productivity2">Produktivität2</a></li>
 </ul>
 </nav>
 
@@ -113,10 +118,28 @@ section {
 
 <h2 id="my_1st_prompt">Dein erster eigener Prompt</h2>
 <div class="prompt">
-<p>Dabei geht es darum, herauszufinden, wobei ChatGPT dich konkret unterstützen kann – im Arbeitsalltag oder im Privaten.</p>
-<p>Dazu erklärst du in einfachen Worten, wer du bist, was dich beschäftigt, wie dein Tag typischerweise aussieht und was du vielleicht besser, leichter oder klarer gestalten möchtest.</p>
-<p>ChatGPT nutzt deine Antworten, um eigene Ideen und Vorschläge zu entwickeln, wie es dich konkret unterstützen kann – bei Aufgaben, Entscheidungen oder der täglichen Organisation.</p>
-<p><em>Hinweis:</em> Variablen wie [deine Position], [Thema], etc. bleiben so, wie sie im Text stehen.</p>
+<p>Mein Prompt
+  Ich bin [deine Position, z. B. Mitarbeiterin] und suche nach Wegen, wie
+  du mich dabei unterstützen kannst, mein Leben einfacher und
+  effizienter zu gestalten. Bitte nutze meine Antworten auf die folgenden
+  Fragen, um meine Bedürfnisse besser zu verstehen und gezielt
+  Bereiche zu identifizieren, in denen du mir helfen kannst:
+  • Was sind deine wichtigsten beruflichen Ziele und Ambitionen?
+  Beispiel: Ich möchte in meiner aktuellen Position aufsteigen
+  • Wie sieht ein typischer Arbeitstag für dich aus?
+  Beispiel: E-Mail schreiben, Meetings, Telefonate, Präsentationen halten
+  • Was sind die größten Herausforderungen in deinem Arbeitsalltag?
+  Beispiel: Zeitmanagement, Konfliktlösung
+  • Welche Aufgaben fallen dir am schwersten und warum?
+  Beispiel: Administrative Tätigkeiten, komplexe Analysen,
+  Konfliktmanagement
+  • Was sind deine langfristigen persönlichen Ziele?
+  Beispiele: Familie gründen, ein Haus kaufen, persönliche Weiterbildung
+  • Welche Bereiche deines Lebens möchtest du verbessern und warum?
+  Beispiel: persönliche Produktivität
+  Analysiere meine Antworten und überlege, wie du mir helfen kannst.
+  Stelle das Ergebnis in einer Tabelle dar, wobei die erste Spalte die
+  Überschrift enthält und die zweite Spalte die genaue Erklärung.</p>
 <button><a href="#toc">zurück zum Inhaltsverzeichnis</a></button>
 </div>
 
@@ -138,19 +161,234 @@ section {
 <button><a href="#toc">zurück zum Inhaltsverzeichnis</a></button>
 </div>
 
-<script>
-document.getElementById('searchBox').addEventListener('input',function() {
-    var filter = this.value.toLowerCase();
-    var prompts = document.querySelectorAll('.prompt');
-    prompts.forEach(function(p){
-        var text = p.innerText.toLowerCase();
-        if (text.includes(filter)) {
-            p.style.display = '';
-        } else {
-            p.style.display = 'none';
-        }
-    });
-});
-</script>
+<h2 id="email2">E-Mails beantworten</h2>
+<div class="prompt">
+  <p>Ich bin [deine Position, z.B. Führungskraft, Projektmanager] und
+    möchte auf die folgende E-Mail antworten. Mein Ziel ist es, [Ziel der
+    Antwort, z.B. Informationen bereitzustellen, eine Anfrage zu
+    beantworten, eine Lösung vorzuschlagen]. Die Antwort soll
+    [prägnant/ausführlich] und in einem
+    [freundlichen/diplomatischen/bestimmenden] Stil verfasst sein. Bitte
+    hilf mir, eine professionelle und klare Antwort zu formulieren, die alle
+    relevanten Punkte anspricht und den Empfänger zufrieden stellt. Füge
+    bei Bedarf höfliche und verbindliche Formulierungen hinzu.
+    E-Mail auf die geantwortet werden soll:
+    [E-Mail-Text hier einfügen]</p>
+  <button><a href="#toc">zurück zum Inhaltsverzeichnis</a></button>
+</div>
+
+<h2 id="email3">E-Mails überarbeiten</h2>
+<div class="prompt">
+  <p>Ich bin [deine Position, z. B. Abteilungsleiterin, Assistenz, Projektmanager]
+    und möchte, dass du meine E-Mail überarbeitest.
+    Achte dabei bitte besonders auf folgende Punkte:
+    [z. B. Klarheit]
+    [z. B. Höflichkeit]
+    [z. B. professionelle Tonalität]
+    [weitere gewünschte Aspekte, z. B. Struktur, Kürze, Ausdruckskraft]
+    Hier ist mein E-Mail-Text:
+    [E-Mail hier einfügen]</p>
+  <button><a href="#toc">zurück zum Inhaltsverzeichnis</a></button>
+</div>
+
+<h2 id="email4">Wiederkehrende E-Mails</h2>
+<div class="prompt">
+  <p>Verfasse eine professionelle Einladung zu einem [Meeting-Typ, z. B.
+    wöchentliches Projekt-Update].
+    Ich bin [deine Position, z. B. Abteilungsleiter, Projektmanager] in einem
+    [Unternehmenstyp, z. B. IT-Startup] und organisiere regelmäßig diese
+    Meetings, um [Ziel, z. B. Fortschritte zu besprechen].
+    Das nächste Meeting findet am [Datum] um [Uhrzeit] im [Ort, z. B.
+    Besprechungsraum Alpha/virtuell via MS Teams] statt.
+    Bitte formuliere die Einladung [Ton, z. B. motivierend, klar, professionell],
+    weise auf die Agenda zur Vorbereitung hin und bitte um Zu- oder Absage
+    bis spätestens [Frist], damit ich optimal planen kann.</p>
+  <button><a href="#toc">zurück zum Inhaltsverzeichnis</a></button>
+</div>
+
+<h2 id="verhandlung1">Gesprächsleitfaden</h2>
+<div class="prompt">
+  <p>Ich bin in [deine Position, z.B. Teamleiterin, Projektmanagerin,
+    Abteilungsleiterin] tätig und möchte ein Gespräch bezüglich [Thema,
+    z.B. Projektfortschritt, Feedback] mit [Gesprächspartner, z.B. einem
+    Teammitglied, einem Geschäftspartner, einem Kunden] vorbereiten.
+    Bitte hilf mir, dieses Gespräch effektiv vorzubereiten und die
+    folgenden Punkte zu beachten:
+    Details zum Gespräch:
+    Ziel des Gesprächs: [Was soll erreicht werden? Z.B. Verbesserung der
+    Arbeitsleistung, Klärung von Missverständnissen, Festlegung der
+    nächsten Schritte]
+    Wichtige Themen: [Welche Themen sollen besprochen werden? Z.B.
+    aktuelle Herausforderungen, bisherige Erfolge, zukünftige Ziele]
+    Fragen oder Anliegen: [Gibt es spezifische Fragen oder Anliegen die
+    geklärt werden müssen? Z.B. Feedback zu konkreten Aufgaben,
+    Wünsche des Teammitglieds]
+    Hintergrundinformationen: [Gibt es relevante
+    Hintergrundinformationen oder Dokumente, die vorbereitet werden
+    müssen? Z.B. Leistungsberichte, Projektpläne, E-Mails]
+    Erstelle mir einen Gesprächsleitfaden mit Phrasen und eine Checkliste
+    in tabellarischer Form.</p>
+  <button><a href="#toc">zurück zum Inhaltsverzeichnis</a></button>
+</div>
+
+<h2 id="verhandlung2">Andere Sichtweisen verstehen</h2>
+<div class="prompt">
+  <p>Ich bin in [deine Position, z.B. Teamleiter] tätig und möchte eine
+    Situation/ein Thema mit einer Person besser verstehen. Dazu möchte
+    ich, dass du die Situation aus verschiedenen Blickwinkeln beleuchtest,
+    sodass ich die Sichtweise der anderen Person besser nachvollziehen
+    kann.
+    Es geht um folgende Situation:
+    [Schilder hier die Situation]
+    Verhandlungen souverän führen
+    Das Thema der Verhandlung ist:
+    [Schilder hier die Situation].
+    Ich bin [deine Position, z. B. Verkäufer] und bereite mich auf eine
+    Verhandlung vor. Bitte erstelle eine detaillierte Pro- und Kontra-Liste
+    sowie mögliche kritische Fragen, die mein Verhandlungspartner stellen
+    könnte. Zusätzlich benötige ich überzeugende Antworten und
+    Argumentationsstrategien, um meine Position bestmöglich zu
+    vertreten.</p>
+  <button><a href="#toc">zurück zum Inhaltsverzeichnis</a></button>
+</div>
+
+<h2 id="verhandlung3">Verhandeln nach dem Harvard-Modell</h2>
+<div class="prompt">
+  <p>
+    Ich bin [deine Position, z.B. Abteilungsleiterin] und möchte ein Thema
+    nach dem Harvard-Prinzip ansprechen. Mein Ziel ist es, [Ziel des
+    Gesprächs, z.B. eine Einigung erzielen, einen Konflikt lösen, eine
+    Verhandlung führen] mit Hilfe des Harvard-Prinzips zu bearbeiten.
+    Es geht um folgende Situation:
+    [Beschreibung der Situation].
+    Das Harvard-Prinzip (alle 4 Punkte) soll dabei helfen, die Interessen
+    beider Parteien zu berücksichtigen und eine faire Lösung zu finden.
+    Bitte hilf mir, dieses Thema effektiv und strukturiert anzusprechen,
+    indem du mir einen Gesprächsleitfaden erstellst und passende
+    Phrasen sowie eine Checkliste in Tabellenform bereitstellst.</p>
+  <button><a href="#toc">zurück zum Inhaltsverzeichnis</a></button>
+</div>
+
+<h2 id="verhandlung4">Gehaltsverhandlungen meistern</h2>
+<div class="prompt">
+  <p>
+    Ich bin in [Position z. B. Projektmanager] tätig und möchte eine
+    Gehaltsverhandlung mit meinem Vorgesetzten führen.
+    Beschreibe deine Situation bzw. Gründe für die Gehaltserhöhung:
+    [z. B. gesteigerte Leistungen, zusätzliche Verantwortlichkeiten, Erfolge
+    bei wichtigen Projekten]
+    Erstelle mir drei verschiedene Phrasen für den Gesprächseinstieg
+    (formell bis informell).
+    Zusätzlich wünsche ich mir eine Liste mit typischen Fragen, die mein
+    Vorgesetzter mir während des Gesprächs stellen könnte, sowie
+    passende und überzeugende Antworten darauf.</p>
+  <button><a href="#toc">zurück zum Inhaltsverzeichnis</a></button>
+</div>
+
+<h2 id="presentation1">Struktur deiner Präsentation</h2>
+<div class="prompt">
+  <p>
+    Ich bin [deine Position, z. B. Trainer, Unternehmensberater] und
+    möchte eine Präsentation zum Thema [Thema, z. B. Künstliche
+    Intelligenz im Unternehmen] erstellen.
+    Mein Zielpublikum ist [Zielgruppe, z. B. Führungskräfte, Studierende,
+    Mitarbeiter], die ein [niedriges/mittleres/hohes] Vorwissen zum Thema
+    haben. Es handelt sich um [Kontext, z. B. eine Live-Präsentation, ein
+    Webinar, einen Pitch]. Die Präsentation soll [z. B. 10 Minuten] dauern
+    und folgende Elemente enthalten:
+    Einleitung: Eine fesselnde Einführung, die das Interesse des Publikums
+    weckt.
+    Hauptteil: Eine klare Struktur mit [Anzahl] Hauptpunkten, die logisch
+    aufeinander aufbauen.
+    Schluss: Eine starke Zusammenfassung mit einer klaren Kernbotschaft.
+    Bitte erstelle für mich eine Präsentationsstruktur mit einer
+    wirkungsvollen Einleitung, einer logischen Gliederung des Hauptteils
+    und einer überzeugenden Schlussfolgerung. Falls sinnvoll, integriere
+    Analogien, Praxisbeispiele und interaktive Elemente.
+    Zusätzlich hätte ich gerne eine Liste mit 3 möglichen Hooks für die
+    Einleitung und 3 Call-to-Actions für den Schluss, um mein Publikum zu
+    aktivieren.</p>
+  <button><a href="#toc">zurück zum Inhaltsverzeichnis</a></button>
+</div>
+
+<h2 id="presentation2">Sprechtext deiner Präsentation</h2>
+<div class="prompt">
+  <p>Ich bin [deine Position, z. B. Trainer, Berater] und arbeite an einer
+    Präsentation für [Zielgruppe, z. B. Führungskräfte, Mitarbeitende] zum
+    Thema [Thema, z. B. Kommunikation im Wandel].
+    Im Anhang findest du die PowerPoint-Folie/das Flipchart/das Poster
+    (als Bild, PDF oder Screenshot).
+    Bitte erstelle mir einen passenden Sprechtext, der den Inhalt klar,
+    verständlich und in einem [z. B.
+    inspirierenden/sachlichen/motivierenden] Stil vermittelt.
+    Der Text soll:– das Publikum abholen,– verständlich durch die Inhalte führen,– und mit einer starken Botschaft
+    enden.
+    Storytelling
+    Gerne mit einem kurzen Beispiel oder einer Frage zur Aktivierung
+    wenn es inhaltlich passt.
+    Ich bin [deine Position, z. B. Marketing-Manager] und möchte eine
+    Geschichte als Einleitung zu [Thema, z. B. E-Mobilität] schreiben. Mein
+    Zielpublikum ist [Zielgruppe, z. B. potenzielle Kunden].
+    Es handelt sich um [Kontext, z. B. einen Vortrag live].
+    Die Geschichte soll das Thema lebendig und fesselnd einführen und
+    das Interesse der Zuhörer wecken. Die Geschichte soll [z. B. 200]
+    Wörter haben.
+    Bitte hilf mir, diese Geschichte wirkungsvoll zu gestalten und die
+    wichtigsten Elemente des Storytellings einzubeziehen, wie Charaktere,
+    Konflikt, Lösung und eine zentrale Botschaft.
+    Die Geschichte soll [z. B. witzig, spannend, inspirierend] sein.
+    Verwende außerdem einen leicht verständlichen Sprechstil, damit ich
+    sie auch gut aussprechen/wiedergeben kann.</p>
+  <button><a href="#toc">zurück zum Inhaltsverzeichnis</a></button>
+</div>
+
+<h2 id="presentation3">Einfach erklären</h2>
+<div class="prompt">
+  <p>Ich bin [deine Position, z. B. Projektmanagerin, Abteilungsleiterin] und
+    möchte ein komplexes Thema [Thema, z. B. E-Mobilität,
+    Quantenphysik, Künstliche Intelligenz] einfach und verständlich
+    erklären. Mein Zielpublikum ist [Zielgruppe, z. B. Teammitglieder,
+    Kundinnen, Studenten].
+    Die Erklärung soll das Thema klar und prägnant vermitteln und
+    sicherstellen, dass auch Personen ohne Vorkenntnisse es verstehen
+    können.
+    Bitte hilf mir, diese Erklärung wirkungsvoll zu gestalten, indem du
+    einfache und alltägliche Analogien und Beispiele verwendest.
+    Gib mir 5 Vorschläge.</p>
+  <button><a href="#toc">zurück zum Inhaltsverzeichnis</a></button>
+</div>
+
+<h2 id="presentation4">Umgang mit kritischen Fragen</h2>
+<div class="prompt">
+  <p> Ich bin [deine Position, z. B. Verkaufsleiterin] und möchte mich auf
+    kritische Fragen zu meinem Vortrag vorbereiten.
+    Mein Vortrag handelt von: [Inhalt des Vortrags hier genau erläutern,
+    z. B. die Bedeutung von Versicherungen für finanzielle Sicherheit und
+    Risikomanagement].
+    Was sind typische Fragen [Anzahl, z. B. 3], die mir das Publikum stellen
+    könnte und wie kann ich darauf [Stil, z. B. sachlich/humorvoll]
+    antworten?</p>
+  <button><a href="#toc">zurück zum Inhaltsverzeichnis</a></button>
+</div>
+
+<h2 id="productivity1">Tagesplanung</h2>
+<div class="prompt">
+  <p>Ich bin [deine Position, z. B. Mitarbeiter im Kundenservice] und möchte
+    meine Tagesplanung effizient gestalten.
+    Bitte hilf mir dabei, meine Aufgaben für den Tag zu planen und erkläre
+    mir auch, warum du die Aufgaben so einteilst. Meine Arbeitszeiten sind
+    von [Arbeitszeiten, z. B. 8:00 bis 17:00 Uhr mit einer Mittagspause von
+    12:00 bis 13:00 Uhr].
+    Plane auch Pufferzeiten ein. Gib mir eine Tabelle als Ergebnis.
+    Ich werde dir meine Aufgaben mit einer Zeitabschätzung geben, wie
+    lange jede Aufgabe dauert.
+    Liste der Aufgaben mit Zeitabschätzung:
+    • [Aufgabe 1, z. B. Vorbereitung der Präsentation für das Teammeeting– 2 Stunden]
+    • [Aufgabe 2, z. B. Beantwortung dringender Kundenanfragen.– 1 Stunde]
+    • [Aufgabe 3, z. B. Auswertung der Kundenzufriedenheitsumfrage und
+    Erstellung eines Kurzberichts – 1,5 Stunden]</p>
+  <button><a href="#toc">zurück zum Inhaltsverzeichnis</a></button>
+</div>
+
 </body>
 </html>
