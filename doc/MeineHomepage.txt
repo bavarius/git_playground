@@ -1,27 +1,27 @@
 Lebenslauf
 ==========
-Persönliche Daten
+x Persönliche Daten
 Einführung
-Berufserfahrung
-Fachwissen
-Bildung
+x Berufserfahrung
+x Fachwissen
+x Bildung
 Referenzen
 
-Downloadmöglichkeit als PDF
+x Downloadmöglichkeit als PDF
 
 Optionale Teile:
 Ehrenamtliche Arbeit
 Hobbys
 
-Art des Führerscheins
+x Art des Führerscheins
 
-Kontakt
+x Kontakt
 
 Zusammenfassung
 Berufserfahrung
 Fertigkeiten
-Fremdsprachen
+x Fremdsprachen
 
 Footer
 ======
-Link zu GitHub
+x Link zu GitHub
