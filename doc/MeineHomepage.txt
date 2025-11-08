@@ -1,26 +1,26 @@
 Lebenslauf
 ==========
 x Persönliche Daten
-Einführung
+- Einführung
 x Berufserfahrung
 x Fachwissen
 x Bildung
-Referenzen
+- Referenzen
 
 x Downloadmöglichkeit als PDF
 
-Optionale Teile:
-Ehrenamtliche Arbeit
-Hobbys
-
 x Art des Führerscheins
-
 x Kontakt
 
-Zusammenfassung
-Berufserfahrung
+- Zusammenfassung
+x Berufserfahrung
 Fertigkeiten
 x Fremdsprachen
+
+Separat - nicht im Lebenslauf (Homepage):
+Hobbys
+======
+Wandern, Langlaufen, Tischtennis, Bierbrauen
 
 Footer
 ======
