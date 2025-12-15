@@ -1,0 +1,13 @@
+Was macht man, wenn das makefile folgende Meldung bringt?
+"Das System kann den angegebenen Pfad nicht finden."
+
+=> Debuggen mit der Option -d
+Der Befehl läuft ewig lange, wenn man sich alles auf der Kommandozeile ausgeben lässt!
+Abhilfe: Umleitung in eine Datei
+Wichtig: Stdout + Stderr müssen beide in eine Datei umgeleitet werden. -
+         Sonst kommt die Fehlermeldung auf der Kommandozeile. Dann hat man keinen Bezug der Ausgabe zum Fehler...
+
+Syntax:
+make <target> -d <Ausgabeumleitung>
+
+make clean -d 1> build_output.log 2>&1
