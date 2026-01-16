@@ -1,0 +1,1 @@
+Get-Content build_output.log -wait -tail 30
