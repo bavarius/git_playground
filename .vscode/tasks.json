@@ -1,0 +1,21 @@
+// Task Runner Configuration for Extension "Simple Task Buttons"
+// Add configurable task buttons to the status bar for quick execution of workspace tasks
+// Icons are configured inside file "task-buttons.json" which is loaded by "tasks.json" on startup.
+// Use any unicode symbol and copy it directly into Your button configuration file. Other icons: "🚀, 💗, ❌"
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "C/C++: gcc.exe build active file",
+      "type": "cppbuild",
+      "command": "C:\\Sandbox\\MSE_I_GEN2_TC23x\\Deploy\\tools_ext\\MinGW\\bin\\gcc.exe",
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+      ],
+      "group": "build"
+    }
+  ]
+}
